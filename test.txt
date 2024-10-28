@@ -5,4 +5,6 @@ atlas schema apply -u "postgres://postgres:trust@localhost:5432/task_management_
 
 atlas schema inspect -u "postgres://postgres:trust@localhost:5432/task_management_db?sslmode=disable" --web
 
-atlas migrate diff create_blog_posts --dir "file://migrations" --to "file://schema.hcl" --dev-url "postgres://postgres:trust@localhost:5432/task_management_db?sslmode=disable"
+atlas migrate diff task-manager --dir "file://migrations" --to "file://schema.hcl" --dev-url "postgres://postgres:trust@localhost:5432/task_management_db?sslmode=disable"
+
+atlas migrate apply --dir file://migrations --url "postgres://postgres:trust@localhost:5432/task_management_db?sslmode=disable"
